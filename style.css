@@ -29,8 +29,11 @@
 .token_list_img, .token_image{
     width: 40px;
 }
+.modal-content{
+    width: 400px;
+}
 .modal-body{
-    height: 600px;
+    height: 500px;
     overflow: scroll;
 }
 .token_row{

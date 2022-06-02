@@ -2,7 +2,7 @@
 //Moralis.serverURL = "https://lucfvav7loqv.usemoralis.com:2053/server"; //Server url from moralis.io
 
 const serverUrl = "https://lucfvav7loqv.usemoralis.com:2053/server";
-const appId = "lbmNGNgx41iIXvQaptC8PuLB3JFeC2EChNMZjgBw" ;
+const appId = "lbmNGNgx41iIXvQaptC8PuLB3JFeC2EChNMZjgBw";
 
 let currentTrade = {};
 let currentSelectSide;
@@ -62,8 +62,12 @@ function renderInterface() {
 }
 
 async function login() {
+
   try {
-    currentUser = Moralis.User.current();
+    Moralis.authenticate().then(function (user) {
+      console.log(user.get('ethAddress'))
+  })
+    const currentUser = Moralis.User.current();
     if (!currentUser) {
       currentUser = await Moralis.authenticate();
     }
